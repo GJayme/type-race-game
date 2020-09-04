@@ -1,1 +1,21 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
 
+body {
+  font: 15px arial;
+  color: #fff;
+  background-color: #160049c5
+}
+
+.wrapper {
+  padding:40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper > div {
+  margin-top: 15px;
+}

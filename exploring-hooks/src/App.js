@@ -3,19 +3,19 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const App = () => {
-  
+
   const SNIPPETS = [
     'Bears, beets, battlestar galactica',
     "What's Forrest Gump's password? 1Forrest1",
     'Where do programmers like to hangout? The Foo Bar'
   ];
-  
+
   const INITIAL_GAME_STATE = {
     victory: false,
     startTime: null,
     endTime: null
   }
-  
+
   /* 
     useState Hook é como se fosse o state de um componente com classe,
     o primeiro valor dele é o estado atual e a segunda é uma função que
@@ -57,21 +57,22 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className='wrapper'>
       <h2>Type Race</h2>
-      <hr />
       <h3>Snippet</h3>
       {snippet}
       <h4>{gameState.victory ? `Done! 🎉 Time: ${gameState.endTime}ms` : null}</h4>
       <input value={userText} onChange={updateUserText} />
-      <hr />
-      {
-        SNIPPETS.map((SNIPPET, index) => (
-          <button onClick={chooseSnippet(index)} key={index}>
-            {SNIPPET.substring(0, 10)}...
-          </button>
-        ))
-      }
+
+      <div>
+        {
+          SNIPPETS.map((SNIPPET, index) => (
+            <button onClick={chooseSnippet(index)} key={index}>
+              {SNIPPET.substring(0, 10)}...
+            </button>
+          ))
+        }
+      </div>
     </div>
   )
 }
